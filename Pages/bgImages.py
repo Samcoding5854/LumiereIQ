@@ -31,7 +31,7 @@ def BGIMAGES():
         # Generate the image
         with st.spinner("Generating image..."):
             image_prompt = f"{prompt}, muted colors, detailed, 8k"
-            image = pipeline(image_prompt, generator=generator).images[0]
+            image = pipeline(image_prompt, generator=generator, height=512, width=768).images[0]
 
         # Save the image
         output_dir = "Assets/bgImages"
@@ -40,10 +40,10 @@ def BGIMAGES():
         image.save(image_path)
 
         # Display the image
-        st.image(image, caption=f"Generated image for: {prompt}")
+        st.image(image, caption=f"Generated image for: {prompt}", width = 300)
 
     else:
-        st.write("Please enter a movie title to generate an image.")
+        st.write("Please enter prompt for background to generate an image.")
 
     # Path to the folder containing images
     image_folder = "Assets/bgImages"
