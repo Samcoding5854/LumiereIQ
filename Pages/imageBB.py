@@ -152,6 +152,8 @@ def run(img_path):
             # Prompt user for the filename
             filename = st.text_input("Enter a name to save the image:")
             if filename and st.button("Save Image"):
+                if not os.path.exists("Assets/output/images"):
+                    os.makedirs("Assets/output/images")
                 output_path = f'Assets/output/images/{filename}.png'
                 cv2.imwrite(output_path, overlay_image)
 

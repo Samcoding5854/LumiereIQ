@@ -45,7 +45,7 @@ def MAIN():
     # Rest of your application code
 
     st.sidebar.title('LumiereIQ')
-    app = st.sidebar.selectbox('', ['Create Visuals','Background Images','Recognize Object', 'Create Script', 'Created Images','Create Video', 'About Me'])
+    app = st.sidebar.selectbox('', ['Create Visuals','Background Images','Recognize Object', 'Create Script', 'Created Images','Create Video'])
     if app == "Create Visuals":
         CREATEVISUALS()
     elif app == "About Me":
